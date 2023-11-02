@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>assignment JS 7 Yummy</title>
+        <link rel="shortcut icon" href="image/logo.png" type="image/x-icon">
+        <!-- ======================================================== -->
+        <!--//! google font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" />
+        <!-- ======================================================== -->
+        <!--//! font awesome -->
+        <link rel="stylesheet" href="style/all.min.css" />
+        <!-- ======================================================== -->
+        <!--//! bootstrap -->
+        <link rel="stylesheet" href="style/bootstrap.min.css" />
+        <!-- ======================================================== -->
+        <!--//! style sheets -->
+        <link rel="stylesheet" href="style/style.css" />
+        <!-- ======================================================== -->
+        <!--//! Jquery & bootstrap bundle & My JS file -->
+        <script src="JS/jquery-3.6.1.min.js"></script>
+        <script src="JS/bootstrap.bundle.min.js"></script>
+        <script src="JS/main.js"></script>
+        <!-- ======================================================= -->
+    </head>
+
+    <body class="bg-dark">
+        <!-- ======================================================== -->
+        <main>
+            <!--? start navbar -->
+            <nav class="position-fixed z-2">
+                <div class="position-relative ">
+                    <div class="vh-100 d-flex">
+                        <div id="navbar-content" class="nav-content d-flex flex-column justify-content-between position-relative end-100 p-4 bg-dark">
+                            <div class="nav-links">
+                                <ul id="animet" class="list-unstyled text-light text-capitalize overflow-hidden">
+                                    <li class="py-2 position-relative" role="button">search</li>
+                                    <li id="cat" class="py-2 position-relative" role="button">categories</li>
+                                    <li id="area" class="py-2 position-relative" role="button">area</li>
+                                    <li id="ingred" class="py-2 position-relative" role="button">ingredients</li>
+                                    <li id="" class="py-2 position-relative" role="button">contact-Us</li>
+                                </ul>
+                            </div>
+                            <div class="nav-footer text-light">
+                                <div class="icons mb-2">
+                                    <i class="fa-brands fa-facebook p-2"></i>
+                                    <i class="fa-brands fa-twitter p-2"></i>
+                                    <i class="fa-solid fa-globe p-2"></i>
+                                </div>
+                                <div class="footer">
+                                    <p>Copyright Â© 2019 All Rights<br />Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="navbar-button" class="nav-btn p-1 bg-light d-flex flex-column justify-content-between align-items-center position-absolute vh-100">
+                            <div class="logo">
+                                <img src="./image/logo.png" class="w-100" alt="logo" />
+                            </div>
+                            <div class="nav-btn" role="button">
+                                <i id="open" class="fa-solid fa-bars fa-2x"></i>
+                            </div>
+                            <div class="nav-icons">
+                                <i class="fa-solid fa-globe d-block p-2"></i>
+                                <i class="fa-solid fa-share-nodes p-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--? end navbar -->
+            <!-- ======================================================= -->
+            <!--!TODO loading screen -->
+            <div class="loading-container" id="load" style="display: none;">
+                <div class="vh-100 d-flex justify-content-center align-items-center">
+                    <div class="loading"></div>
+                    <div id="loading-text">loading</div>
+                </div>
+            </div>
+            <!-- ======================================================= -->
+            <!--? search section start -->
+            <section class="search" style="display: none">
+                <div class="container p-3">
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        <div class="col">
+                            <input id="searchBN" type="text" class="form-control w-100 m-2" placeholder="search by name" />
+                        </div>
+                        <div class="col">
+                            <input id="searchBFL" maxlength="1" type="text" class="form-control w-100 m-2" placeholder="search by first litter" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--? search section end -->
+            <!-- ======================================================= -->
+            <section class="main-section">
+                <div class="container p-5">
+                    <div class="row row-cols-2 row-cols-lg-4 g-3" id="show"></div>
+                </div>
+            </section>
+            <!-- ======================================================= -->
+            <!--? Instructions section start -->
+            <section class="instructions vh-100" style="display: none">
+                <div class="container p-5">
+                    <div class="close text-end">
+                        <i id="close" class="fa-solid fa-close text-danger fa-1x p-3 pe-0" role="button"></i>
+                    </div>
+                    <div class="row text-light" id="mealDetails"></div>
+                </div>
+            </section>
+            <!--? Instructions section end -->
+            <!-- ======================================================= -->
+            <!--?Categories sections start -->
+            <section class="categories vh-100" style="display: none">
+                <div class="container p-5">
+                    <div class="row row-cols-2 row-cols-lg-4 g-3" id="categories"></div>
+                </div>
+            </section>
+            <!--? Categories sections end -->
+            <!-- ======================================================= -->
+            <!--? Area Section start -->
+            <section class="area vh-100" style="display: none">
+                <div class="container p-5">
+                    <div class="row row-cols-2 row-cols-lg-4 g-3" id="areashow"></div>
+                </div>
+            </section>
+            <!--? Area Section end -->
+            <!-- ======================================================= -->
+            <!--? ingredients Section start -->
+            <section class="ingredients" style="display: none">
+                <div class="container p-5">
+                    <div class="row row-cols-2 row-cols-lg-4 g-3" id="showIngredients"></div>
+                </div>
+            </section>
+            <!--? ingredients Section end -->
+            <!-- ======================================================= -->
+            <!--? Contact Us section start -->
+            <section class="contact-Us" style="display: none">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-lg-2 vh-100 align-content-center">
+                        <div class="col">
+                            <input type="text" placeholder="Name" class="form-control m-2" id="nameInput">
+                            <div class="alert alert-danger my-2 d-none" id="nameAlert">Invalid name</div>
+                        </div>
+                        <div class="col">
+                            <input type="email" placeholder="Email" class="form-control m-2" id="emailInput">
+                            <div class="alert alert-danger my-2 d-none" id="emailAlert">Invalid email <span class="text-info">(example: asd@wer.com)</span></div>
+                        </div>
+                        <div class="col">
+                            <input type="tel" placeholder="Phone Number" class="form-control m-2" id="phoneInput">
+                            <div class="alert alert-danger my-2 d-none" id="phoneAlert">Invalid phone</div>
+                        </div>
+                        <div class="col">
+                            <input type="number" placeholder="Your Age" class="form-control m-2" id="ageInput">
+                            <div class="alert alert-danger my-2 d-none" id="ageAlert">Invalid Age</div>
+                        </div>
+                        <div class="col">
+                            <input type="password" placeholder="Password" class="form-control m-2" id="passwordInput">
+                            <div class="alert alert-danger my-2 d-none" id="passwordAlert">Minimum eight characters, at least one letter and one number</div>
+                        </div>
+                        <div class="col">
+                            <input type="password" placeholder="Re-password" class="form-control m-2" id="rePasswordInput">
+                            <div class="alert alert-danger my-2 d-none" id="rePasswordAlert">Enter a same password</div>
+                        </div>
+                        <div class="m-auto text-center my-3">
+                            <button id="submitBtn" disabled="true" class="btn btn-outline-danger px-4 mt-3">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--? Contact Us section end -->
+            <!-- ======================================================= -->
+        </main>
+        <!-- ======================================================= -->
+    </body>
+
+</html>
